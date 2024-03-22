@@ -27,6 +27,13 @@ function sendMail() {
   .then(function(response) {
     console.log("SUCCESS!", response.status, response.text);
     alert(`Email sent successfully to ${parms.to}`);
+
+    // Reset input fields
+    document.getElementById("name").value = "";
+    document.getElementById("to").value = "";
+    document.getElementById("EventName").value = "";
+    document.getElementById("MailType").value = "";
+    document.getElementById("TicketID").value = "";
   }, function(error) {
     console.error("FAILED...", error);
     alert("Failed to send the email. Please try again.");
